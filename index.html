@@ -12,8 +12,10 @@
 
             $.getJSON( "Data2.json", function( data ) {
                 var items = [];
-                $.each( data, function( key, val ) {
-                    items.push( "<li id='" + key + "'>" + val + "</li>" );
+                $.each( data, function(obj) 
+                {
+
+                    document.getElementById("DataTeste").innerHTML = obj;
                 });
  
                 $( "<ul/>", {
@@ -21,7 +23,7 @@
                 html: items.join( "" )
                 }).appendTo( "body" );
             });
-            document.getElementById("DataTeste").innerHTML = obj.employees[1].firstName + " " + obj.employees[1].lastName;
+            //document.getElementById("DataTeste").innerHTML = obj.employees[1].firstName + " " + obj.employees[1].lastName;
 
         </script>
     </body>
