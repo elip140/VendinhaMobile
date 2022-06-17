@@ -106,9 +106,15 @@ function ConverterJSONcat(json="", isString=false)
         prod_nome.classList.add("card-title");
         prod_nome.appendChild(document.createTextNode(arrayObjects[i].Nome));
 
+        var btn_cart = document.createElement("button");
+        btn_cart.classList.add("btn","btn-primary");
+        btn_cart.setAttribute("onclick", 'ShowProdutos("'+arrayObjects[i].Nome+'")');
+        btn_cart.appendChild(document.createTextNode("Adicionar ao Carrinho"));
+
 
 
         cardbody.appendChild(prod_nome);
+        cardbody.appendChild(btn_cart);
 
         card.appendChild(img);
         card.appendChild(cardbody);
