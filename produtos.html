@@ -20,15 +20,14 @@
             <div id="Lista" class="row row-cols-2 row-cols-md-3 g-4">
 
                 <script type="text/javascript">
-                    var json = '[{"ID": 1,"IMG": "IMAGEM1","Nome":"Teste","Descricao": "1AAAAAAAAAAAAAAAAAAA"},{"ID": 2,"IMG": "IMAGEM2","Nome":"Teste2","Descricao": "2AAAAAAAAAAAAAAAAAAA"},{"ID": 3,"IMG": "IMAGEM3","Nome":"Teste3","Descricao": "3AAAAAAAAAAAAAAAAAAA"},{"ID": 4,"IMG": "IMAGEM4","Nome":"Teste4","Descricao": "4AAAAAAAAAAAAAAAAAAA"}]';
-                    var teste="";
-                    readTextFile("Data2.json", function(text){
-                        teste = text;
-                        console.log(teste);
-                    });
+                    //var json = '[{"ID": 1,"IMG": "IMAGEM1","Nome":"Teste","Descricao": "1AAAAAAAAAAAAAAAAAAA"},{"ID": 2,"IMG": "IMAGEM2","Nome":"Teste2","Descricao": "2AAAAAAAAAAAAAAAAAAA"},{"ID": 3,"IMG": "IMAGEM3","Nome":"Teste3","Descricao": "3AAAAAAAAAAAAAAAAAAA"},{"ID": 4,"IMG": "IMAGEM4","Nome":"Teste4","Descricao": "4AAAAAAAAAAAAAAAAAAA"}]';
+                    var json="";
 
-                    alert(teste);
-                    ConverterJSONprod(json, true);
+                    readTextFile("Data2.json", function(text){
+                        json = text;
+                        console.log(json);
+                    });
+                    ConverterJSONprod(json, false);
                 </script>      
             </div>
         </div>
