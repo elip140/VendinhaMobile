@@ -29,7 +29,7 @@
         card.classList.add("card");
 
         var img = document.createElement("img");
-        img.setAttribute("src", arrayObjects[i].IMG);
+        img.setAttribute("src", "data:image/jpeg;base64,"+arrayObjects[i].IMG);
         img.classList.add("card-img-top");
 
         var cardbody = document.createElement("div");
@@ -96,7 +96,7 @@ function ConverterJSONcat(json="", isString=false)
 
 
         var img = document.createElement("img");
-        img.setAttribute("src", arrayObjects[i].IMG);
+        img.setAttribute("src", "data:image/jpeg;base64,"+arrayObjects[i].IMG);
         img.classList.add("card-img-top");
 
         var cardbody = document.createElement("div");
@@ -138,3 +138,15 @@ function ShowProdutos(Categoria="")
     window.location.assign("aaaaaaaaa"+Categoria);
 }
 
+
+function readTextFile(file, callback) {
+    var rawFile = new XMLHttpRequest();
+    rawFile.overrideMimeType("application/json");
+    rawFile.open("GET", file, true);
+    rawFile.onreadystatechange = function() {
+        if (rawFile.readyState === 4 && rawFile.status == "200") {
+            callback(rawFile.responseText);
+        }
+    }
+    rawFile.send(null);
+}
