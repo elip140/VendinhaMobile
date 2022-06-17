@@ -92,7 +92,7 @@ function ConverterJSONcat(json="", isString=false)
 
         var card = document.createElement("div");
         card.classList.add("card");
-        card.setAttribute("onclick", "ShowProdutos("+arrayObjects[i].Nome+")");
+        card.setAttribute("onclick", 'ShowProdutos("'+arrayObjects[i].Nome+'")');
 
 
         var img = document.createElement("img");
@@ -123,7 +123,12 @@ function ConverterJSONcat(json="", isString=false)
 
 function ShowProdutos(Categoria="")
 {
-    window.AppInventor.setWebViewString(Categoria);
+    try {
+        window.AppInventor.setWebViewString(Categoria);
+    } catch (error) {
+        alert(error);
+    }
+    
     window.location.assign("aaaaaaaaa"+Categoria);
 }
 
