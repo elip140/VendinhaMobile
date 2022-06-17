@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Categorias</title>
+        <title>Produtos</title>
         <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
         <link rel="stylesheet" href="css/site.css" asp-append-version="true" />
 
@@ -10,7 +10,7 @@
         <script src="js/site.js" asp-append-version="true"></script>
     </head>
     <body>
-        <h1>Categorias</h1>
+        <h1>Produtos</h1>
 
         <p id="DataTeste"></p>
         <p id="DataTeste2"></p>
@@ -20,13 +20,13 @@
             <div id="Lista" class="row row-cols-2 row-cols-md-3 g-4">
 
                 <script type="text/javascript">
-                    var json = '[{"Nome":"CategoriaTeste","IMG": "IMAGEM1","Descricao": "1AAAAAAAAAAAAAAAAAAA"},{"Nome":"CategoriaTeste2","IMG": "IMAGEM2","Descricao": "2AAAAAAAAAAAA"},{"Nome":"CategoriaTeste3","IMG": "IMAGEM3","Descricao": "3AAAAAAAAAA"},{"Nome":"CategoriaTeste4","IMG": "IMAGEM4","Descricao": "4AAAAAAAAAAAAAAAAAAAAAA"}]';
+                    var json = '[{"ID": 1,"IMG": "IMAGEM1","Nome":"Teste","Descricao": "1AAAAAAAAAAAAAAAAAAA"},{"ID": 2,"IMG": "IMAGEM2","Nome":"Teste2","Descricao": "2AAAAAAAAAAAAAAAAAAA"},{"ID": 3,"IMG": "IMAGEM3","Nome":"Teste3","Descricao": "3AAAAAAAAAAAAAAAAAAA"},{"ID": 4,"IMG": "IMAGEM4","Nome":"Teste4","Descricao": "4AAAAAAAAAAAAAAAAAAA"}]';
                     
-                    ConverterJSONcat(json, true);
-        
+                    
+                    ConverterJSONprod(json, true);
                 </script>      
             </div>
         </div>
-        
+        <script type="text/javascript" src="Data.json"></script>
     </body>
 </html>
