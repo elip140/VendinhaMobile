@@ -69,6 +69,6 @@ function ShowProdutos(cat)
 
     sessionStorage.setItem('GlobalCategoria', cat);
     
-    window.location.assign("Produtos.html");
+    window.location.assign("produtos.html");
 }
 
