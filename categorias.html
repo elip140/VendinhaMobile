@@ -7,8 +7,8 @@
 
         <script src="js/jquery/jquery.min.js"></script>
         <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
-        <script src="js/data.js"></script>
-        <script src="js/site.js" asp-append-version="true"></script>
+        <script src="js/functions.js"></script>
+        <script src="js/Categorias.js" asp-append-version="true"></script>
     </head>
     <body>
         <h1>Categorias</h1>
@@ -21,9 +21,19 @@
             <div id="Lista" class="row row-cols-2 row-cols-md-3 g-4">
 
                 <script type="text/javascript">
-                    var json = '[{"Nome":"CategoriaTeste","IMG": "IMAGEM1","Descricao": "1AAAAAAAAAAAAAAAAAAA"},{"Nome":"CategoriaTeste2","IMG": "IMAGEM2","Descricao": "2AAAAAAAAAAAA"},{"Nome":"CategoriaTeste3","IMG": "IMAGEM3","Descricao": "3AAAAAAAAAA"},{"Nome":"CategoriaTeste4","IMG": "IMAGEM4","Descricao": "4AAAAAAAAAAAAAAAAAAAAAA"}]';
+
+                    $.ajax({
+                        url: 'Categoria/DataCat.json',
+                        contentType: 'application/json',
+                        cache: false,
+                        method: 'GET',
+                        dataType: 'json',
+                        success: function(data) {
+                            console.log(data);
+                            ConverterJSONcat(data, false);
+                        }
+                    });
                     
-                    ConverterJSONcat(json, true);
         
                 </script>      
             </div>

@@ -1,0 +1,34 @@
+[
+    {
+        "ID": 1,
+        "IMG": "IMG/img11.png",
+        "Nome":"Teste",
+        "Descricao": "1AAAAAAAAAAAAAAAAAAA",
+        "Categoria": "CategoriaTeste2",
+        "Preco": 10.00
+    },
+    {
+        "ID": 2,
+        "IMG": "IMG/img9.png",
+        "Nome":"Teste10",
+        "Descricao": "2AAAAAAAAAAAAAAAAAAA",
+        "Categoria": "CategoriaTeste2",
+        "Preco": 20.00
+    },
+    {
+        "ID": 3,
+        "IMG": "IMG/img8.png",
+        "Nome":"Teste3",
+        "Descricao": "3AAAAAAAAAAAAAAAAAAA",
+        "Categoria": "CategoriaTeste2",
+        "Preco": 69.69
+    },
+    {
+        "ID": 4,
+        "IMG": "IMG/img1.jpg",
+        "Nome":"Teste4",
+        "Descricao": "4AAAAAAAAAAAAAAAAAAA",
+        "Categoria": "CategoriaTeste2",
+        "Preco": 30.10
+    }
+]

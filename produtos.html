@@ -7,8 +7,8 @@
 
         <script src="js/jquery/jquery.min.js"></script>
         <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
-        <script src="js/data.js"></script>
-        <script src="js/site.js" asp-append-version="true"></script>
+        <script src="js/functions.js"></script>
+        <script src="js/Produtos.js" asp-append-version="true"></script>
     </head>
     <body>
         <h1>Produtos</h1>
@@ -20,11 +20,21 @@
         <div class="conteiner-fluid m-3">
             <div id="Lista" class="row row-cols-2 row-cols-md-3 g-4">
 
+                
                 <script type="text/javascript">
-                    //var json = '[{"ID": 1,"IMG": "IMAGEM1","Nome":"Teste","Descricao": "1AAAAAAAAAAAAAAAAAAA"},{"ID": 2,"IMG": "IMAGEM2","Nome":"Teste2","Descricao": "2AAAAAAAAAAAAAAAAAAA"},{"ID": 3,"IMG": "IMAGEM3","Nome":"Teste3","Descricao": "3AAAAAAAAAAAAAAAAAAA"},{"ID": 4,"IMG": "IMAGEM4","Nome":"Teste4","Descricao": "4AAAAAAAAAAAAAAAAAAA"}]';
-                    var json="";
-
-                    ConverterJSONprod(DataProd, true);
+                    var GlobalCategoria = sessionStorage.getItem('GlobalCategoria')
+                    
+                    $.ajax({
+                        url: 'Categoria/'+GlobalCategoria+'.json',
+                        contentType: 'application/json',
+                        cache: false,
+                        method: 'GET',
+                        dataType: 'json',
+                        success: function(data) {
+                            ConverterJSONprod(data, false);
+                        }
+                    });
+                    //data:image/jpeg;base64,
                 </script>      
             </div>
         </div>
