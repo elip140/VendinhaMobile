@@ -17,7 +17,10 @@ function ConverterJSONprod(json="", isString=false)
                     <div class="card-body">
                         <h5 class="card-title">Nome Produto</h5>
                         <p class="card-text">Preço</p>
-                        <button onclick="myFunction()">Click me</button>
+                        
+                    </div>
+                    <div class="card-footer">
+                        <button onclick="myFunction()">Adicionar no Carrinho</button>
                     </div>
                 </div>
             </div>
@@ -28,9 +31,13 @@ function ConverterJSONprod(json="", isString=false)
         var card = document.createElement("div");
         card.classList.add("card");
 
+
+
         var img = document.createElement("img");
         img.setAttribute("src", arrayObjects[i].IMG);
         img.classList.add("card-img-top");
+
+
 
         var cardbody = document.createElement("div");
         cardbody.classList.add("card-body");
@@ -43,9 +50,14 @@ function ConverterJSONprod(json="", isString=false)
         prod_preco.classList.add("card-text");
         prod_preco.appendChild(document.createTextNode(arrayObjects[i].Descricao));
 
+
+
+        var divfooter = document.createElement("div");
+        divfooter.classList.add("card-footer");
+
         var btn_cart = document.createElement("button");
         btn_cart.classList.add("btn","btn-primary");
-        btn_cart.setAttribute("onclick", "Function("+arrayObjects[i].ID+")");
+        btn_cart.setAttribute("onclick", "AddProduto("+arrayObjects[i].ID+")");
         btn_cart.appendChild(document.createTextNode("Adicionar ao Carrinho"));
 
 
@@ -63,4 +75,23 @@ function ConverterJSONprod(json="", isString=false)
     }
 }
 
+function AddProduto(ProdID)
+{
+    try {
+        $.ajax({
+            url: 'Produtos/'+ProdID+'.json',
+            contentType: 'application/json',
+            cache: false,
+            method: 'GET',
+            dataType: 'json',
+            success: function(data) {
+                var json = '{"ID": '+data.ID+', "Qtd": '+1+', "Nome":"'+data.Nome+'", "Preco":'+data.Preco+'}'
+                window.AppInventor.setWebViewString(json);
+            }
+        });
+    } catch (error) {
+        console.log(error);
+    }
 
+
+}

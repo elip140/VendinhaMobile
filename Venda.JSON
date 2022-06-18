@@ -1,0 +1,5 @@
+{
+    "Data":"1-01-1",
+    "ValorTotal": 10.69,
+    "Possui/Produtos":[{"Produto_ID":1, "Quantidade":2},{"Produto_ID":3, "Quantidade":2},{"Produto_ID":4, "Quantidade":2}]
+}
