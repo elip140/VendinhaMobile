@@ -85,8 +85,14 @@ function AddProduto(ProdID)
             method: 'GET',
             dataType: 'json',
             success: function(data) {
-                var json = '{"ID": '+data.ID+', "Qtd": '+1+', "Nome":"'+data.Nome+'", "Preco":'+data.Preco+'}'
-                window.AppInventor.setWebViewString(json);
+                var json = '{"ID": '+data.ID+', "Qtd": '+1+', "Nome":"'+data.Nome+'", "Preco":'+data.Preco+'}';
+                try {
+                    window.AppInventor.setWebViewString(json); 
+                } catch (error) {
+                    alert(error);
+                    alert(json);
+                }
+                
             }
         });
     } catch (error) {
