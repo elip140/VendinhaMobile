@@ -1,7 +1,7 @@
 [
     {
         "ID": 1,
-        "IMG": "IMAGEM1",
+        "IMG": "IMG/img1.jpg",
         "Nome":"Teste",
         "Descricao": "1AAAAAAAAAAAAAAAAAAA",
         "Categoria": "BBBB",
@@ -9,7 +9,7 @@
     },
     {
         "ID": 2,
-        "IMG": "IMAGEM2",
+        "IMG": "IMG/img2.png",
         "Nome":"Teste2",
         "Descricao": "2AAAAAAAAAAAAAAAAAAA",
         "Categoria": "BBBB",
@@ -17,7 +17,7 @@
     },
     {
         "ID": 3,
-        "IMG": "IMAGEM3",
+        "IMG": "IMG/img3.png",
         "Nome":"Teste3",
         "Descricao": "3AAAAAAAAAAAAAAAAAAA",
         "Categoria": "BBBB",
@@ -25,7 +25,7 @@
     },
     {
         "ID": 4,
-        "IMG": "IMAGEM4",
+        "IMG": "IMG/img4.png",
         "Nome":"Teste4",
         "Descricao": "4AAAAAAAAAAAAAAAAAAA",
         "Categoria": "BBBB",

@@ -29,7 +29,7 @@
         card.classList.add("card");
 
         var img = document.createElement("img");
-        img.setAttribute("src", "data:image/jpeg;base64,"+arrayObjects[i].IMG);
+        img.setAttribute("src", arrayObjects[i].IMG);
         img.classList.add("card-img-top");
 
         var cardbody = document.createElement("div");
@@ -96,7 +96,7 @@ function ConverterJSONcat(json="", isString=false)
 
 
         var img = document.createElement("img");
-        img.setAttribute("src", "data:image/jpeg;base64,"+arrayObjects[i].IMG);
+        img.setAttribute("src", arrayObjects[i].IMG);
         img.classList.add("card-img-top");
 
         var cardbody = document.createElement("div");
