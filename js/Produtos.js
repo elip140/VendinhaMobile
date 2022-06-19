@@ -65,6 +65,7 @@ function ConverterJSONprod(json="", isString=false)
         var Lista = document.getElementById("Lista");
         Lista.innerHTML += cardProd;
     }
+    CheckCart();
 }
 
 function AddProduto(ProdID)
@@ -92,17 +93,24 @@ function AddProduto(ProdID)
     }
 }
 
-function CheckCart(Lista)
+function CheckCart()
 {
-    ListaIDs.forEach(item => {
-        document.getElementById('divqtd_'+item).classList.add('vanish');
-        document.getElementById('btncart_'+item).classList.remove('vanish');
-    });
+    try {
+        var Lista = window.AppInventor.getWebViewString();
+
+        ListaIDs.forEach(item => {
+            document.getElementById('divqtd_'+item).classList.add('vanish');
+            document.getElementById('btncart_'+item).classList.remove('vanish');
+        });
+        
+        Lista.forEach(item =>{
+            document.getElementById('divqtd_'+item.ID).classList.remove('vanish');
+            document.getElementById('btncart_'+item.ID).classList.add('vanish');
+        })
+    } catch (error) {
+        alert(error);
+    }
     
-    Lista.forEach(item =>{
-        document.getElementById('divqtd_'+item.ID).classList.remove('vanish');
-        document.getElementById('btncart_'+item.ID).classList.add('vanish');
-    })
 }
 
 function QtdMais(ProdID)
