@@ -98,6 +98,7 @@ function CheckCart()
     try {
         var Lista = window.AppInventor.getWebViewString();
         alert(Lista);
+        Lista = JSON.stringify(Lista);
 
         ListaIDs.forEach(item => {
             document.getElementById('divqtd_'+item).classList.add('vanish');
