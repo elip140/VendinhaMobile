@@ -118,7 +118,7 @@ function CheckCart()
                 "Qtd":1
             }
     ]*/
-        //
+        alert(Lista);
 
         ListaIDs.forEach(item => {
             document.getElementById('divqtd_'+item).classList.add('vanish');
