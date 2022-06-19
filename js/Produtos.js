@@ -93,22 +93,51 @@ function AddProduto(ProdID)
     }
 }
 
+
 function CheckCart()
 {
     try {
         var Lista = window.AppInventor.getWebViewString();
-        alert(Lista);
-        Lista = JSON.stringify(Lista);
+        /*[
+            {
+                "ID": 6,
+                "Nome":"Teste10",
+                "Preco": 20.00,
+                "Qtd":10
+            },
+            {
+                "ID": 7,
+                "Nome":"Teste3",
+                "Preco": 69.69,
+                "Qtd":1
+            },
+            {
+                "ID": 100,
+                "Nome":"Teste",
+                "Preco": 10,
+                "Qtd":1
+            }
+    ]*/
+        //
 
         ListaIDs.forEach(item => {
             document.getElementById('divqtd_'+item).classList.add('vanish');
             document.getElementById('btncart_'+item).classList.remove('vanish');
         });
         
-        Lista.forEach(item =>{
-            document.getElementById('divqtd_'+item.ID).classList.remove('vanish');
-            document.getElementById('btncart_'+item.ID).classList.add('vanish');
-        })
+        for(i=0; i<Lista.length; i++)
+        {
+            var qtd = document.getElementById('qtd_'+Lista[i].ID);
+            var divqtd = document.getElementById('divqtd_'+Lista[i].ID);
+            var btncart = document.getElementById('btncart_'+Lista[i].ID);
+            if(qtd!=null && divqtd!=null && btncart!=null)
+            {
+                qtd.textContent = Lista[i].Qtd;
+                divqtd.classList.remove('vanish');
+                btncart.classList.add('vanish');
+            }
+            
+        }
     } catch (error) {
         alert(error);
     }
@@ -134,13 +163,14 @@ function QtdMais(ProdID)
         BtnMenus.classList.add("btn-outline-dark");
         BtnMenus.classList.remove("btn-outline-danger")
     }
+    AddProduto(ProdID);
 }
 function QtdMenus(ProdID)
 {
     var Qtd = document.getElementById('qtd_'+ProdID);
     Qtd.textContent = Qtd.textContent-1;
 
-    if(Qtd.textContent>1)
+    if(Qtd.textContent>0)
     {
         var BtnMenus = document.getElementById('btnmenus_'+ProdID);
         BtnMenus.classList.remove("disabled");
@@ -154,4 +184,5 @@ function QtdMenus(ProdID)
         BtnMenus.classList.add("btn-outline-dark");
         BtnMenus.classList.remove("btn-outline-danger")
     }
+    AddProduto(ProdID);
 }
