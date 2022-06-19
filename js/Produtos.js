@@ -1,3 +1,5 @@
+var ListaIDs=[];
+
 function ConverterJSONprod(json="", isString=false)
 {
     // Recebe um JSON e gera os cards para cada os produtos
@@ -34,6 +36,7 @@ function ConverterJSONprod(json="", isString=false)
             </div>
         */
         var ID = arrayObjects[i].ID;
+        ListaIDs.push(ID);
         var cardProd = `<div class="col" id="divcol_`+ID+`">
                             <div class="card" id="divcard_`+ID+`">
                                 <img src="`+arrayObjects[i].IMG+`" class="card-img-top" alt="..." id="img_`+ID+`">
@@ -46,7 +49,7 @@ function ConverterJSONprod(json="", isString=false)
                                 <div class="card-footer" id="divfooter_`+ID+`">
                                     <button class="btn btn-primary" onclick="AddProduto(`+ID+`)" id="btncart_`+ID+`">Adicionar no Carrinho</button>
 
-                                    <div class="input-group mb-3" id="divqtd_`+ID+`">
+                                    <div class="input-group mb-3 vanish" id="divqtd_`+ID+`">
                                         <div class="input-group-prepend" id="divmenus_`+ID+`">
                                             <button class="btn btn-outline-danger" type="button" onclick="QtdMenus(`+ID+`)" id="btnmenus_`+ID+`">-</button>
                                         </div>
@@ -91,7 +94,15 @@ function AddProduto(ProdID)
 
 function CheckCart(Lista)
 {
+    ListaIDs.forEach(item => {
+        document.getElementById('divqtd_'+item).classList.add('vanish');
+        document.getElementById('btncart_'+item).classList.remove('vanish');
+    });
     
+    Lista.forEach(item =>{
+        document.getElementById('divqtd_'+item.ID).classList.remove('vanish');
+        document.getElementById('btncart_'+item.ID).classList.add('vanish');
+    })
 }
 
 function QtdMais(ProdID)
