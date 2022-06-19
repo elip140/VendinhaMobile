@@ -125,8 +125,11 @@ function CheckCart()
             document.getElementById('btncart_'+item).classList.remove('vanish');
         });
         
+        Lista = eval(Lista);
         for(i=0; i<Lista.length; i++)
         {
+            alert(Lista[i]);
+
             var qtd = document.getElementById('qtd_'+Lista[i].ID);
             var divqtd = document.getElementById('divqtd_'+Lista[i].ID);
             var btncart = document.getElementById('btncart_'+Lista[i].ID);
