@@ -17,61 +17,50 @@ function ConverterJSONprod(json="", isString=false)
                     <div class="card-body">
                         <h5 class="card-title">Nome Produto</h5>
                         <p class="card-text">Preço</p>
-                        
                     </div>
                     <div class="card-footer">
                         <button onclick="myFunction()">Adicionar no Carrinho</button>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <button class="btn btn-outline-danger" type="button">-</button>
+                            </div>
+                            <span class="input-group-text">1</span>
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-success" type="button">+</button>
+                            </div>
+                        </div> 
                     </div>
                 </div>
             </div>
-        */ 
-        var divcol = document.createElement("div");
-        divcol.classList.add("col");
+        */
+        var ID = arrayObjects[i].ID;
+        var cardProd = `<div class="col" id="divcol_`+ID+`">
+                            <div class="card" id="divcard_`+ID+`">
+                                <img src="`+arrayObjects[i].IMG+`" class="card-img-top" alt="..." id="img_`+ID+`">
 
-        var card = document.createElement("div");
-        card.classList.add("card");
+                                <div class="card-body" id="divbody_`+ID+`">
+                                    <h5 class="card-title" id="nome_`+ID+`">`+arrayObjects[i].Nome+`</h5>
+                                    <p class="card-text" id="preco_`+ID+`">R$`+arrayObjects[i].Preco+`</p>
+                                </div>
 
+                                <div class="card-footer" id="divfooter_`+ID+`">
+                                    <button class="btn btn-primary" onclick="AddProduto(`+ID+`)" id="btncart_`+ID+`">Adicionar no Carrinho</button>
 
-
-        var img = document.createElement("img");
-        img.setAttribute("src", arrayObjects[i].IMG);
-        img.classList.add("card-img-top");
-
-
-
-        var cardbody = document.createElement("div");
-        cardbody.classList.add("card-body");
-
-        var prod_nome = document.createElement("h5");
-        prod_nome.classList.add("card-title");
-        prod_nome.appendChild(document.createTextNode(arrayObjects[i].Nome));
-
-        var prod_preco = document.createElement("p");
-        prod_preco.classList.add("card-text");
-        prod_preco.appendChild(document.createTextNode(arrayObjects[i].Descricao));
-
-
-
-        var divfooter = document.createElement("div");
-        divfooter.classList.add("card-footer");
-
-        var btn_cart = document.createElement("button");
-        btn_cart.classList.add("btn","btn-primary");
-        btn_cart.setAttribute("onclick", "AddProduto("+arrayObjects[i].ID+")");
-        btn_cart.appendChild(document.createTextNode("Adicionar ao Carrinho"));
-
-
-        cardbody.appendChild(prod_nome);
-        cardbody.appendChild(prod_preco);
-        cardbody.appendChild(btn_cart);
-
-        card.appendChild(img);
-        card.appendChild(cardbody);
-        
-        divcol.appendChild(card);
+                                    <div class="input-group mb-3" id="divqtd_`+ID+`">
+                                        <div class="input-group-prepend" id="divmenus_`+ID+`">
+                                            <button class="btn btn-outline-danger" type="button" onclick="QtdMenus(`+ID+`)" id="btnmenus_`+ID+`">-</button>
+                                        </div>
+                                        <span class="input-group-text" id="qtd_`+ID+`">1</span>
+                                        <div class="input-group-append" id="divmais_`+ID+`">
+                                            <button class="btn btn-outline-success" type="button" onclick="QtdMais(`+ID+`)" id="btnmais_`+ID+`">+</button>
+                                        </div>
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>`;
 
         var Lista = document.getElementById("Lista");
-        Lista.appendChild(divcol);
+        Lista.innerHTML += cardProd;
     }
 }
 
@@ -98,6 +87,50 @@ function AddProduto(ProdID)
     } catch (error) {
         console.log(error);
     }
+}
 
+function CheckCart(Lista)
+{
+    
+}
 
+function QtdMais(ProdID)
+{
+    var Qtd = document.getElementById('qtd_'+ProdID);
+    Qtd.textContent = parseInt(Qtd.textContent)+1;
+
+    if(Qtd.textContent>1)
+    {
+        var BtnMenus = document.getElementById('btnmenus_'+ProdID);
+        BtnMenus.classList.remove("disabled");
+        BtnMenus.classList.remove("btn-outline-dark");
+        BtnMenus.classList.add("btn-outline-danger");
+    }
+    else
+    {
+        var BtnMenus = document.getElementById('btnmenus_'+ProdID);
+        BtnMenus.classList.add("disabled");
+        BtnMenus.classList.add("btn-outline-dark");
+        BtnMenus.classList.remove("btn-outline-danger")
+    }
+}
+function QtdMenus(ProdID)
+{
+    var Qtd = document.getElementById('qtd_'+ProdID);
+    Qtd.textContent = Qtd.textContent-1;
+
+    if(Qtd.textContent>1)
+    {
+        var BtnMenus = document.getElementById('btnmenus_'+ProdID);
+        BtnMenus.classList.remove("disabled");
+        BtnMenus.classList.remove("btn-outline-dark");
+        BtnMenus.classList.add("btn-outline-danger");
+    }
+    else
+    {
+        var BtnMenus = document.getElementById('btnmenus_'+ProdID);
+        BtnMenus.classList.add("disabled");
+        BtnMenus.classList.add("btn-outline-dark");
+        BtnMenus.classList.remove("btn-outline-danger")
+    }
 }
