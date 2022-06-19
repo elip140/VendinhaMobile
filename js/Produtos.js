@@ -130,8 +130,11 @@ function CheckCart()
             var qtd = document.getElementById('qtd_'+Lista[i].ID);
             var divqtd = document.getElementById('divqtd_'+Lista[i].ID);
             var btncart = document.getElementById('btncart_'+Lista[i].ID);
+
+            alert(qtd+' - '+divqtd+' - '+btncart+' - ');
             if(qtd!=null && divqtd!=null && btncart!=null)
             {
+                alert('Não Nulo');
                 qtd.textContent = Lista[i].Qtd;
                 divqtd.classList.remove('vanish');
                 btncart.classList.add('vanish');
