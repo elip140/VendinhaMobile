@@ -1,7 +1,7 @@
 [
     {
-        "Nome":"A1",
-        "Qtd": 2
+        "MainText":"Nome",
+        "Detailtex": "PreçoUni 2 - 83 - benka"
     },
     {
         "Nome":"A2",

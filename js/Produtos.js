@@ -99,26 +99,7 @@ function CheckCart()
 {
     try {
         var Lista = window.AppInventor.getWebViewString();
-        /*[
-            {
-                "ID": 6,
-                "Nome":"Teste10",
-                "Preco": 20.00,
-                "Qtd":10
-            },
-            {
-                "ID": 7,
-                "Nome":"Teste3",
-                "Preco": 69.69,
-                "Qtd":1
-            },
-            {
-                "ID": 100,
-                "Nome":"Teste",
-                "Preco": 10,
-                "Qtd":1
-            }
-    ]*/
+        
         alert(Lista);
 
         ListaIDs.forEach(item => {
@@ -133,7 +114,6 @@ function CheckCart()
             var divqtd = document.getElementById('divqtd_'+Lista[i].ID);
             var btncart = document.getElementById('btncart_'+Lista[i].ID);
 
-            alert(qtd+' - '+divqtd+' - '+btncart+' - ');
             if(qtd!=null && divqtd!=null && btncart!=null)
             {
                 qtd.textContent = Lista[i].Qtd;
