@@ -47,7 +47,7 @@
 
         var prod_nome = document.createElement("h5");
         prod_nome.classList.add("card-title");
-        prod_nome.appendChild(document.createTextNode(arrayObjects[i].Nome));*/
+        prod_nome.appendChild(document.createTextNode(arrayObjects[i].Nome));
 
 
         cardbody.appendChild(prod_nome);
@@ -55,7 +55,7 @@
         card.appendChild(img);
         card.appendChild(cardbody);
         
-        divcol.appendChild(card);
+        divcol.appendChild(card);*/
 
         var Lista = document.getElementById("Lista");
         Lista.innerHTML += cardCat;
