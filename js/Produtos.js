@@ -90,6 +90,7 @@ function AddProduto(ProdID)
             }
         });
     } catch (error) {
+        alert("Add Produto = "+error);
         console.log(error);
     }
 }
@@ -124,7 +125,7 @@ function CheckCart()
             
         }
     } catch (error) {
-        alert(error);
+        alert("Check Cart = "+error);
     }
     
 }
