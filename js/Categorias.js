@@ -20,7 +20,17 @@
                 </div>
             </div>
         */ 
-        var divcol = document.createElement("div");
+
+        var cardCat = `<div class="col">
+                            <div class="card" onClick="ShowProdutos("`+arrayObjects[i].Nome+`")">
+                                <img src="`+arrayObjects[i].IMG+`" class="card-img-top" alt="...">
+
+                                <div class="card-body">
+                                    <h5 class="card-title">`+arrayObjects[i].Nome+`</h5>
+                                </div>
+                            </div>
+                        </div>`;
+        /*var divcol = document.createElement("div");
         divcol.classList.add("col");
 
         var card = document.createElement("div");
@@ -37,7 +47,7 @@
 
         var prod_nome = document.createElement("h5");
         prod_nome.classList.add("card-title");
-        prod_nome.appendChild(document.createTextNode(arrayObjects[i].Nome));
+        prod_nome.appendChild(document.createTextNode(arrayObjects[i].Nome));*/
 
 
         cardbody.appendChild(prod_nome);
@@ -48,7 +58,7 @@
         divcol.appendChild(card);
 
         var Lista = document.getElementById("Lista");
-        Lista.appendChild(divcol);
+        Lista.innerHTML += cardCat;
     }
 }
 

@@ -13,28 +13,6 @@ function ConverterJSONprod(json="", isString=false)
 
     for(i=0; i<arrayObjects.length; i++)
     {
-        /*<div class="col">
-                <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Nome Produto</h5>
-                        <p class="card-text">Preço</p>
-                    </div>
-                    <div class="card-footer">
-                        <button onclick="myFunction()">Adicionar no Carrinho</button>
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <button class="btn btn-outline-danger" type="button">-</button>
-                            </div>
-                            <span class="input-group-text">1</span>
-                            <div class="input-group-append">
-                                <button class="btn btn-outline-success" type="button">+</button>
-                            </div>
-                        </div> 
-                    </div>
-                </div>
-            </div>
-        */
         var ID = arrayObjects[i].ID;
         ListaIDs.push(ID);
         var cardProd = `<div class="col" id="divcol_`+ID+`">
@@ -135,20 +113,6 @@ function QtdMais(ProdID)
     var Qtd = document.getElementById('qtd_'+ProdID);
     Qtd.textContent = parseInt(Qtd.textContent)+1;
 
-    /*if(Qtd.textContent>1)
-    {
-        var BtnMenus = document.getElementById('btnmenus_'+ProdID);
-        BtnMenus.classList.remove("disabled");
-        BtnMenus.classList.remove("btn-outline-dark");
-        BtnMenus.classList.add("btn-outline-danger");
-    }
-    else
-    {
-        var BtnMenus = document.getElementById('btnmenus_'+ProdID);
-        BtnMenus.classList.add("disabled");
-        BtnMenus.classList.add("btn-outline-dark");
-        BtnMenus.classList.remove("btn-outline-danger")
-    }*/
     AddProduto(ProdID);
 }
 function QtdMenus(ProdID)
@@ -156,19 +120,5 @@ function QtdMenus(ProdID)
     var Qtd = document.getElementById('qtd_'+ProdID);
     Qtd.textContent = Qtd.textContent-1;
 
-    /*if(Qtd.textContent>0)
-    {
-        var BtnMenus = document.getElementById('btnmenus_'+ProdID);
-        BtnMenus.classList.remove("disabled");
-        BtnMenus.classList.remove("btn-outline-dark");
-        BtnMenus.classList.add("btn-outline-danger");
-    }
-    else
-    {
-        var BtnMenus = document.getElementById('btnmenus_'+ProdID);
-        BtnMenus.classList.add("disabled");
-        BtnMenus.classList.add("btn-outline-dark");
-        BtnMenus.classList.remove("btn-outline-danger")
-    }*/
     AddProduto(ProdID);
 }
