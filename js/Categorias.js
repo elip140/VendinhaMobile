@@ -22,7 +22,7 @@
         */ 
 
         var cardCat = `<div class="col">
-                            <div class="card" onClick="ShowProdutos("`+arrayObjects[i].Nome+`")">
+                            <div class="card" onClick="ShowProdutos('`+arrayObjects[i].Nome+`')">
                                 <img src="`+arrayObjects[i].IMG+`" class="card-img-top" alt="...">
 
                                 <div class="card-body">
