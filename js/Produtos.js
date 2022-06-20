@@ -134,7 +134,7 @@ function QtdMais(ProdID)
     var Qtd = document.getElementById('qtd_'+ProdID);
     Qtd.textContent = parseInt(Qtd.textContent)+1;
 
-    if(Qtd.textContent>1)
+    /*if(Qtd.textContent>1)
     {
         var BtnMenus = document.getElementById('btnmenus_'+ProdID);
         BtnMenus.classList.remove("disabled");
@@ -147,7 +147,7 @@ function QtdMais(ProdID)
         BtnMenus.classList.add("disabled");
         BtnMenus.classList.add("btn-outline-dark");
         BtnMenus.classList.remove("btn-outline-danger")
-    }
+    }*/
     AddProduto(ProdID);
 }
 function QtdMenus(ProdID)
@@ -155,7 +155,7 @@ function QtdMenus(ProdID)
     var Qtd = document.getElementById('qtd_'+ProdID);
     Qtd.textContent = Qtd.textContent-1;
 
-    if(Qtd.textContent>0)
+    /*if(Qtd.textContent>0)
     {
         var BtnMenus = document.getElementById('btnmenus_'+ProdID);
         BtnMenus.classList.remove("disabled");
@@ -168,6 +168,6 @@ function QtdMenus(ProdID)
         BtnMenus.classList.add("disabled");
         BtnMenus.classList.add("btn-outline-dark");
         BtnMenus.classList.remove("btn-outline-danger")
-    }
+    }*/
     AddProduto(ProdID);
 }
