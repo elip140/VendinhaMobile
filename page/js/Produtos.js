@@ -13,15 +13,15 @@ function ConverterJSONprod(json="", isString=false)
 
     for(i=0; i<arrayObjects.length; i++)
     {
-        var ID = arrayObjects[i].ID;
+        var ID = arrayObjects[i].id;
         ListaIDs.push(ID);
         var cardProd = `<div class="col" id="divcol_`+ID+`">
                             <div class="card" id="divcard_`+ID+`">
-                                <img src="`+arrayObjects[i].IMG+`" class="card-img-top" alt="..." id="img_`+ID+`">
+                                <img src="`+arrayObjects[i].img+`" class="card-img-top" alt="..." id="img_`+ID+`">
 
                                 <div class="card-body" id="divbody_`+ID+`">
-                                    <h5 class="card-title" id="nome_`+ID+`">`+arrayObjects[i].Nome+`</h5>
-                                    <p class="card-text" id="preco_`+ID+`">R$`+arrayObjects[i].Preco+`</p>
+                                    <h5 class="card-title" id="nome_`+ID+`">`+arrayObjects[i].nome+`</h5>
+                                    <p class="card-text" id="preco_`+ID+`">R$`+arrayObjects[i].preco+`</p>
                                 </div>
 
                                 <div class="card-footer" id="divfooter_`+ID+`">
@@ -56,8 +56,8 @@ function AddProduto(ProdID)
             method: 'GET',
             dataType: 'json',
             success: function(data) {
-                var qtd = document.getElementById('qtd_'+data.ID).textContent;
-                var json = '{"ID": '+data.ID+', "Qtd": '+parseInt(qtd)+', "Nome":"'+data.Nome+'", "Preco":'+data.Preco+'}';
+                var qtd = document.getElementById('qtd_'+data.id).textContent;
+                var json = '{"id": '+data.id+', "qtd": '+parseInt(qtd)+', "nome":"'+data.nome+'", "preco":'+data.preco+'}';
                 try {
                     window.AppInventor.setWebViewString(json); 
                 } catch (error) {
@@ -88,9 +88,9 @@ function CheckCart()
         Lista = eval(Lista);
         for(i=0; i<Lista.length; i++)
         {
-            var qtd = document.getElementById('qtd_'+Lista[i].ID);
-            var divqtd = document.getElementById('divqtd_'+Lista[i].ID);
-            var btncart = document.getElementById('btncart_'+Lista[i].ID);
+            var qtd = document.getElementById('qtd_'+Lista[i].id);
+            var divqtd = document.getElementById('divqtd_'+Lista[i].id);
+            var btncart = document.getElementById('btncart_'+Lista[i].id);
 
             if(qtd!=null && divqtd!=null && btncart!=null)
             {
