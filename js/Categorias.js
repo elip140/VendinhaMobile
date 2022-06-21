@@ -25,7 +25,7 @@
 
         var card = document.createElement("div");
         card.classList.add("card");
-        card.setAttribute("onclick", 'ShowProdutos("'+arrayObjects[i].Nome+'")');
+        card.setAttribute("onclick", 'ShowProdutos("'+arrayObjects[i].nome+'")');
 
 
         var img = document.createElement("img");
