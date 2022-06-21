@@ -12,44 +12,33 @@
         <div class="conteiner-fluid g-4">
             <div class="row">
                 <div id="Lista" class="col text-center">
-                    <img id="img" src="" class="img-thumbnail" style="max-width: 300px;">
 
                 <script type="text/javascript">
-                    
-
-                    function ChangeIMG()
-                    {
+                    try {
                         try {
-                            try {
-                                var valor = window.AppInventor.getWebViewString();
-                                alert(valor);
-                            } catch (error) {
-                            
-                            }
-                        
-                            $.ajax({
-                                    url: '../pix/base64.txt',
-                                    cache: false,
-                                    method: 'GET',
-                                    success: function(data) {
-                                        console.log(data);
-
-		                                var base64 = "data:image/jpeg;base64,"+data;
-                                        //var pix = `<img id="img" src="`+base64+`" class="img-thumbnail" style="max-width: 300px;">`;
-                    
-                                        //var Lista = document.getElementById("Lista");
-                                        //Lista.innerHTML += pix;
-                                        var img = document.getElementById('img');
-                                        simg.setAttribute('src', base64);
-                                    }
-                                });
+                            var valor = window.AppInventor.getWebViewString();
+                            alert(valor);
                         } catch (error) {
-                            base64 = "IMG/img1.jpg";
+                            
                         }
+                        
+                        $.ajax({
+                                url: '../pix/base64.txt',
+                                cache: false,
+                                method: 'GET',
+                                success: function(data) {
+                                    console.log(data);
 
-                            var img = document.getElementById('img');
-                            img.setAttribute('src', path);
-                        }
+		                            var base64 = "data:image/jpeg;base64,"+data;
+                                    var pix = `<img id="img" src="`+base64+`" class="img-thumbnail" style="max-width: 300px;">`;
+                    
+                                    var Lista = document.getElementById("Lista");
+                                    Lista.innerHTML += pix;
+                                }
+                            });
+                    } catch (error) {
+                        base64 = "IMG/img1.jpg";
+                    }
 
                     
                 </script>
