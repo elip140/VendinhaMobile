@@ -13,28 +13,6 @@ function ConverterJSONprod(json="", isString=false)
 
     for(i=0; i<arrayObjects.length; i++)
     {
-        /*<div class="col">
-                <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Nome Produto</h5>
-                        <p class="card-text">Preço</p>
-                    </div>
-                    <div class="card-footer">
-                        <button onclick="myFunction()">Adicionar no Carrinho</button>
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <button class="btn btn-outline-danger" type="button">-</button>
-                            </div>
-                            <span class="input-group-text">1</span>
-                            <div class="input-group-append">
-                                <button class="btn btn-outline-success" type="button">+</button>
-                            </div>
-                        </div> 
-                    </div>
-                </div>
-            </div>
-        */
         var ID = arrayObjects[i].id;
         ListaIDs.push(ID);
         var cardProd = `<div class="col" id="divcol_`+ID+`">

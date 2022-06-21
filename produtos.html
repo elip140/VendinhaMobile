@@ -18,7 +18,7 @@
                     var GlobalCategoria = sessionStorage.getItem('GlobalCategoria')
                     
                     $.ajax({
-                        url: 'categorias/'+GlobalCategoria,
+                        url: '../categorias/'+GlobalCategoria,
                         contentType: 'application/json',
                         cache: false,
                         method: 'GET',
