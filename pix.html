@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <title>Pix</title>
+        <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/site.css" />
+
+
+        <script src="js/jquery/jquery.min.js"></script>
+        <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
+    </head>
+    <body>
+        <div class="conteiner-fluid g-4">
+            <div class="row">
+                <div id="Lista" class="col text-center">
+                <script type="text/javascript">
+                    var path;
+                    try {
+                        var valor = window.AppInventor.getWebViewString();
+                        $.ajax({
+                                url: '../pix/'+valor,
+                                contentType: 'application/json',
+                                cache: false,
+                                method: 'GET',
+                                dataType: 'json',
+                                success: function(data) {
+                                    console.log(data);
+
+		                            base64 = "data:image/jpeg;base64,"+data;
+                                }
+                            });
+                    } catch (error) {
+                        base64 = "IMG/img1.jpg";
+                    }
+
+                    var pix = `<img id="img" src="`+base64+`" class="img-thumbnail" style="width: 200px;">`;
+                    
+                    var Lista = document.getElementById("Lista");
+                    Lista.innerHTML += pix;
+                </script>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            var valor = window.AppInventor.getWebViewString();
+            $.ajax({
+                    url: '/pix/'+valor,
+                    contentType: 'application/json',
+                    cache: false,
+                    method: 'GET',
+                    dataType: 'json',
+                    success: function(data) {
+                        console.log(data);
+
+                        var pix = document.getElementById("pix");
+		                pix.setAttribute("src", "data:image/jpeg;base64,"+data.pix);
+                    }
+                    });
+        </script>
+    </body>
+</html>
+<html>
+    <head>
+        <title>IMG</title>
+        <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/site.css"/>
+
+
+        <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
+    </head>
+    <body>
+        
+    </body>
+</html>
