@@ -12,18 +12,27 @@
             <div class="row">
                 <div id="Lista" class="col text-center">
 
-                <script type="text/javascript">
-                    var path;
-                    try {
-                        path = window.AppInventor.getWebViewString();
-                    } catch (error) {
-                        path = "IMG/img1.jpg";
-                    }
+                    <img id="img" src="" class="img-thumbnail" style="max-width: 300px;">
 
-                    var img = `<img id="img" src="`+path+`" class="img-thumbnail" style="max-width: 300px;">`;
+                <script type="text/javascript">
+                    function ChangeIMG()
+                    {
+                        var path;
+                        try {
+                            path = window.AppInventor.getWebViewString();
+                        } catch (error) {
+                            path = "IMG/img1.jpg";
+                        }
+
+                        var img = document.getElementById('img');
+                        img.setAttribute('src', path);
+                    }
                     
-                    var Lista = document.getElementById("Lista");
-                    Lista.innerHTML += img;
+
+                    //var img = `<img id="img" src="`+path+`" class="img-thumbnail" style="max-width: 300px;">`;
+                    
+                    //var Lista = document.getElementById("Lista");
+                    //Lista.innerHTML += img;
                 </script>
                 
                 </div>
