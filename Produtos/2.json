@@ -1,8 +1,8 @@
 {
-    "ID": 2,
-    "IMG": "IMG/img10.jpg",
-    "Nome":"Teste10",
-    "Descricao": "2AAAAAAAAAAAAAAAAAAA",
-    "Categoria": "CategoriaTeste",
-    "Preco": 20.00
+    "id": 2,
+    "img": "IMG/img10.jpg",
+    "nome":"Teste10",
+    "descricao": "2AAAAAAAAAAAAAAAAAAA",
+    "categoria": "CategoriaTeste",
+    "preco": 20.00
 }
