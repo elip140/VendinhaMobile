@@ -50,12 +50,13 @@ function AddProduto(ProdID)
 {
     try {
         $.ajax({
-            url: '../../produtos/'+ProdID,
+            url: '../produtos/'+ProdID,
             contentType: 'application/json',
             cache: false,
             method: 'GET',
             dataType: 'json',
             success: function(data) {
+                alert(data.id);
                 var qtd = document.getElementById('qtd_'+data.id).textContent;
                 var json = '{"id": '+data.id+', "qtd": '+parseInt(qtd)+', "nome":"'+data.nome+'", "preco":'+data.preco+'}';
                 try {
