@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Pix</title>
+        <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/site.css" />
+
+
+        <script src="js/jquery/jquery.min.js"></script>
+        <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
+    </head>
+    <body>
+        <img id="pix" src="">
+        
+
+        <script type="text/javascript">
+            var valor = window.AppInventor.getWebViewString();
+            $.ajax({
+                    url: '../pix/'+valor,
+                    contentType: 'application/json',
+                    cache: false,
+                    method: 'GET',
+                    dataType: 'json',
+                    success: function(data) {
+                        console.log(data);
+
+                        var pix = document.getElementById("pix");
+		                pix.setAttribute("src", "data:image/jpeg;base64,"+data.pix);
+                    }
+                    });
+        </script>
+    </body>
+</html>
