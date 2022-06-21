@@ -8,11 +8,26 @@
         <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
     </head>
     <body>
-        <img id="img" src="">
+        <div class="conteiner-fluid g-4">
+            <div class="row">
+                <div id="Lista" class="col text-center">
 
-        <script type="text/javascript">
-		    var img = document.getElementById("img");
-		    img.setAttribute("src", window.AppInventor.getWebViewString());
-        </script>
+                <script type="text/javascript">
+                    var path;
+                    try {
+                        path = window.AppInventor.getWebViewString();
+                    } catch (error) {
+                        path = "IMG/img1.jpg";
+                    }
+
+                    var img = `<img id="img" src="`+path+`" class="img-thumbnail" style="max-width: 300px;">`;
+                    
+                    var Lista = document.getElementById("Lista");
+                    Lista.innerHTML += img;
+                </script>
+                
+                </div>
+            </div>
+        </div>
     </body>
 </html>

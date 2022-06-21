@@ -13,13 +13,17 @@
         
 
         <script type="text/javascript">
-            var valor = window.AppInventor.getWebViewString();
+            try {
+                var valor = window.AppInventor.getWebViewString();
+                alert(valor);
+            } catch (error) {
+                
+            }
+            
             $.ajax({
-                    url: '/pix/'+valor,
-                    contentType: 'application/json',
+                    url: '../pix/base64.txt',
                     cache: false,
                     method: 'GET',
-                    dataType: 'json',
                     success: function(data) {
                         console.log(data);
 
