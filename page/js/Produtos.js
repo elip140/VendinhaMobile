@@ -50,7 +50,7 @@ function AddProduto(ProdID)
 {
     try {
         $.ajax({
-            url: 'Produtos/'+ProdID+'.json',
+            url: '../produtos/'+ProdID+'.json',
             contentType: 'application/json',
             cache: false,
             method: 'GET',
