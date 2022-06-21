@@ -57,7 +57,7 @@ function AddProduto(ProdID)
             dataType: 'json',
             success: function(data) {
                 var qtd = document.getElementById('qtd_'+data.id).textContent;
-                var json = '{"ID": '+data.id+', "Qtd": '+parseInt(qtd)+', "Nome":"'+data.nome+'", "Preco":'+data.preco+'}';
+                var json = '{"id": '+data.id+', "qtd": '+parseInt(qtd)+', "nome":"'+data.nome+'", "preco":'+data.preco+'}';
                 try {
                     window.AppInventor.setWebViewString(json); 
                 } catch (error) {
