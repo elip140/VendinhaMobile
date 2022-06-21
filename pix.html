@@ -16,13 +16,11 @@
                     var path;
                     try {
                         var valor = window.AppInventor.getWebViewString();
-                        alert(valor);
                         $.ajax({
                                 url: '../pix/'+valor,
                                 cache: false,
                                 method: 'GET',
                                 success: function(data) {
-                                    alert(data);
                                     console.log(data);
 
 		                            base64 = "data:image/jpeg;base64,"+data;
