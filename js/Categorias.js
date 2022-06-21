@@ -13,7 +13,7 @@
     {
         var cardCat = `<div class="col">
                             <div class="card" onClick="ShowProdutos('`+arrayObjects[i].nome+`')">
-                                <img src="`+arrayObjects[i].img+`" class="card-img-top" alt="..." style="width: 200px;">
+                                <img src="`+arrayObjects[i].img+`" class="card-img-top" alt="...">
 
                                 <div class="card-body">
                                     <h5 class="card-title">`+arrayObjects[i].nome+`</h5>

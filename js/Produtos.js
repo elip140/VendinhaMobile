@@ -17,7 +17,7 @@ function ConverterJSONprod(json="", isString=false)
         ListaIDs.push(ID);
         var cardProd = `<div class="col" id="divcol_`+ID+`">
                             <div class="card" id="divcard_`+ID+`">
-                                <img src="`+arrayObjects[i].img+`" class="card-img-top" alt="..." id="img_`+ID+`" style="width: 200px;">
+                                <img src="`+arrayObjects[i].img+`" class="card-img-top" alt="..." id="img_`+ID+`">
 
                                 <div class="card-body" id="divbody_`+ID+`">
                                     <h5 class="card-title" id="nome_`+ID+`">`+arrayObjects[i].nome+`</h5>
