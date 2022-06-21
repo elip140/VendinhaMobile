@@ -18,24 +18,22 @@
                         var valor = window.AppInventor.getWebViewString();
                         $.ajax({
                                 url: '../pix/'+valor,
-                                contentType: 'application/json',
                                 cache: false,
                                 method: 'GET',
-                                dataType: 'json',
                                 success: function(data) {
                                     console.log(data);
 
 		                            base64 = "data:image/jpeg;base64,"+data;
+                                    var pix = `<img id="img" src="`+base64+`" class="img-thumbnail" style="max-width: 300px;">`;
+                                    
+                                    var Lista = document.getElementById("Lista");
+                                    Lista.innerHTML += pix;
                                 }
                             });
                     } catch (error) {
                         base64 = "IMG/img1.jpg";
                     }
 
-                    var pix = `<img id="img" src="`+base64+`" class="img-thumbnail" style="max-width: 300px;">`;
-                    
-                    var Lista = document.getElementById("Lista");
-                    Lista.innerHTML += pix;
                 </script>
                 </div>
             </div>
