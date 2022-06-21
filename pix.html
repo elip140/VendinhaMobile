@@ -16,21 +16,24 @@
                     var path;
                     try {
                         var valor = window.AppInventor.getWebViewString();
+                        alert(valor);
                         $.ajax({
                                 url: '../pix/'+valor,
                                 cache: false,
                                 method: 'GET',
                                 success: function(data) {
+                                    alert(data);
                                     console.log(data);
 
 		                            base64 = "data:image/jpeg;base64,"+data;
                                     var pix = `<img id="img" src="`+base64+`" class="img-thumbnail" style="max-width: 300px;">`;
-                                    
+
                                     var Lista = document.getElementById("Lista");
                                     Lista.innerHTML += pix;
                                 }
                             });
                     } catch (error) {
+                        alert(error);
                         base64 = "IMG/img1.jpg";
                     }
 
