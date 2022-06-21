@@ -57,8 +57,6 @@ function AddProduto(ProdID)
             dataType: 'json',
             success: function(data) {
                 var qtd = document.getElementById('qtd_'+data.id).textContent;
-                alert('qtd_'+data.id);
-                alert('Parse = '+parseInt(qtd));
                 var json = '{"id": '+data.id+', "qtd": '+parseInt(qtd)+', "nome":"'+data.nome+'", "preco":'+data.preco+'}';
                 try {
                     window.AppInventor.setWebViewString(json); 
@@ -96,7 +94,7 @@ function CheckCart()
 
             if(qtd!=null && divqtd!=null && btncart!=null)
             {
-                qtd.textContent = Lista[i].Qtd;
+                qtd.textContent = Lista[i].qtd;
                 divqtd.classList.remove('vanish');
                 btncart.classList.add('vanish');
             }
