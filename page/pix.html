@@ -14,7 +14,6 @@
                 <div id="Lista" class="col text-center">
 
                 <script type="text/javascript">
-                    var base64;
                     try {
                         try {
                             var valor = window.AppInventor.getWebViewString();
@@ -30,17 +29,18 @@
                                 success: function(data) {
                                     console.log(data);
 
-		                            base64 = "data:image/jpeg;base64,"+data;
+		                            var base64 = "data:image/jpeg;base64,"+data;
+                                    var pix = `<img id="img" src="`+base64+`" class="img-thumbnail" style="max-width: 300px;">`;
+                    
+                                    var Lista = document.getElementById("Lista");
+                                    Lista.innerHTML += pix;s
                                 }
                             });
                     } catch (error) {
                         base64 = "IMG/img1.jpg";
                     }
 
-                    var pix = `<img id="img" src="`+base64+`" class="img-thumbnail" style="max-width: 300px;">`;
                     
-                    var Lista = document.getElementById("Lista");
-                    Lista.innerHTML += pix;
                 </script>
     
                 </div>
